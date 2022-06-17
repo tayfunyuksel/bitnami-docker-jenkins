@@ -20,5 +20,5 @@ set -o pipefail
 
 if ! is_dir_empty "$JAVA_EXTRA_SECURITY_DIR"; then
     info "Adding custom CAs to the Java security folder"
-    cp -Lr "$JAVA_EXTRA_SECURITY_DIR" /opt/bitnami/java/lib/security
+    cp -rf "$JAVA_EXTRA_SECURITY_DIR/cacerts" /opt/bitnami/java/lib/security
 fi
